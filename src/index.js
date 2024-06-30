@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
  // Make sure to include this for Tailwind CSS
 import './index.css'
+
+
+
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,15 +21,15 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat backdrop-blur-sm lg:bg-[url('myweb/public/web_signup.jpg')] md:bg-[url('myweb/public/web_signup.jpg')] sm:bg-[url('/mobilebg.png')]" style={{ fontFamily: 'Roboto' }}>
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat backdrop-blur-sm lg:contt md:contt sm:conttt" style={{ fontFamily: 'Roboto' }}>
       <div className="bg-white p-6 shadow-filled  w-full lg:max-w-lg md:max-w-md lg:max-h-max md:h-screen lg:rounded-[43px] md:rounded-[43px] sm:container" style={{ height: '57%' }}>
         <div className="flex justify-center mb-4">
-          <img src="/cclogo.png" alt="CodeChef VIT Chennai Chapter" className="w-20 h-20" />
+          <img src={require('./cclogo.png')}  alt="CodeChef VIT Chennai Chapter" className="w-20 h-20" />
         </div>
         <h2 className="text-center text-2xl font-bold mb-4 text-blue-500">LOGIN</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative">
-            <label htmlFor="email" className="block text-left text-sm font-bold text-black-700">Email ID</label>
+            <label htmlFor="email" className="block text-left ml-[15px] text-sm font-bold text-black-700">Email ID</label>
             <input
               type="email"
               placeholder="some.mail@university.com"
@@ -38,11 +41,11 @@ const LoginForm = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <img src="/email.png" className="h-6 w-6 mt-[20px]" alt="Email" />
+              <img src={require('./email.png')}  className="h-6 w-6 mt-[20px]" alt="Email" />
             </div>
           </div>
           <div className="relative">
-            <label htmlFor="password" className="block text-left  text-sm font-bold text-black-700">Password</label>
+            <label htmlFor="password" className="block text-left  ml-[15px] text-sm font-bold text-black-700">Password</label>
             <input
               type={showPassword ? "text" : "password"}
               id="password"
@@ -54,10 +57,10 @@ const LoginForm = () => {
               placeholder='********'
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <img src="/lock.png" className="h-6 w-6 mt-[20px]" alt="Lock" />
+              <img src={require('./lock.png')}  className="h-6 w-6 mt-[20px]" alt="Lock" />
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
-              <img src={showPassword ? "/eye-off.png" : "/eye.png"} className="mt-[20px]  h-5 w-5" alt="Toggle visibility" />
+              <img src={showPassword ? require('./eye.png')  : require('./eye-off.png') } className="mt-[20px]  h-5 w-5" alt="Toggle visibility" />
             </div>
           </div>
           <div className="flex items-center justify-between">
@@ -110,16 +113,16 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat backdrop-blur-sm lg:bg-[url('myweb/public/web_signup.jpg')] sm:bg-[url('myweb/public/mobilebg.png')]" style={{ fontFamily: 'Roboto' }}>
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat backdrop-blur-sm lg:contt md:contt sm:conttt" style={{ fontFamily: 'Roboto' }}>
       <div className="bg-white p-6 shadow-filled  w-full lg:max-w-lg md:max-w-md lg:max-h-max md:h-screen lg:rounded-[43px] md:rounded-[43px] sm:cont" style={{ height: '57%' }}>
         <div className="flex justify-center mb-4">
-          <img src="/cclogo.png" alt="CodeChef VIT Chennai Chapter" className="w-1/4" />
+          <img src={require('./cclogo.png')} alt="CodeChef VIT Chennai Chapter" className="w-1/4" />
         </div>
         <h2 className="text-center text-2xl font-bold mb-4 text-blue-500">SIGN UP</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="block mx-auto w-full flex space-x-4">
             <div className="relative">
-              <label htmlFor="name" className="block text-left text-sm font-bold text-black-700">Name</label>
+              <label htmlFor="name" className="block text-left ml-[15px] text-sm font-bold text-black-700">Name</label>
               <div className="flex space-x-4">
                 <input
                   type="text"
@@ -143,7 +146,7 @@ const SignUpForm = () => {
             </div>
           </div>
           <div className="relative">
-            <label htmlFor="email" className="block text-left ml-[60px] text-sm font-bold text-black-700">Email ID</label>
+            <label htmlFor="email" className="block text-left ml-[15px] text-sm font-bold text-black-700">Email ID</label>
             <input
               type="email"
               placeholder="some.mail@university.com"
@@ -154,11 +157,11 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-              <img src="/email.png" className="h-6 w-6  mt-[20px]" alt="Email" />
+              <img src={require('./email.png')}className="h-6 w-6  mt-[20px]" alt="Email" />
             </div>
           </div>
           <div className="relative">
-            <label htmlFor="phoneNumber" className="block text-left ml-[60px] text-sm font-bold text-black-700">Phone Number</label>
+            <label htmlFor="phoneNumber" className="block text-left ml-[15px] text-sm font-bold text-black-700">Phone Number</label>
             <input
               type="tel"
               placeholder="+91 ****** ****"
@@ -169,11 +172,11 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-              <img src="/phonebook.png" className="h-6 w-6  mt-[20px]" alt="Phone" />
+              <img src={require('./phonebook.png')} className="h-6 w-6  mt-[20px]" alt="Phone" />
             </div>
           </div>
           <div className="relative">
-            <label htmlFor="password" className="block text-left ml-[60px] text-sm font-bold text-black-700">Password</label>
+            <label htmlFor="password" className="block text-left ml-[15px] text-sm font-bold text-black-700">Password</label>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -184,14 +187,14 @@ const SignUpForm = () => {
               placeholder='********'
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-              <img src="/lock.png" className="h-6 w-6  mt-[20px]" alt="Lock" />
+              <img src={require('./lock.png')} className="h-6 w-6  mt-[20px]" alt="Lock" />
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
-              <img src={showPassword ? "/eye-off.png" : "/eye.png"} className="mt-[20px]  h-5 w-5" alt="Toggle visibility" />
+              <img src={showPassword ? require('./eye.png')  : require('./eye-off.png') } className="mt-[20px]  h-5 w-5" alt="Toggle visibility" />
             </div>
           </div>
           <div className="relative">
-            <label htmlFor="confirmPassword" className="block text-left ml-[60px] text-sm font-bold text-black-700">Confirm Password</label>
+            <label htmlFor="confirmPassword" className="block text-left  ml-[15px] text-sm font-bold text-black-700">Confirm Password</label>
             <input
               type={showPassword ? "text" : "password"}
               name="confirmPassword"
@@ -202,10 +205,10 @@ const SignUpForm = () => {
               placeholder='********'
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-              <img src="/lock.png" className="h-6 w-6 mt-[20px]" alt="Lock" />
+              <img src={require('./lock.png')} className="h-6 w-6 mt-[20px]" alt="Lock" />
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>
-              <img src={showPassword ? "/eye-off.png" : "/eye.png"} className="mt-[20px] h-5 w-5" alt="Toggle visibility" />
+              <img src={showPassword ? require('./eye.png')  : require('./eye-off.png') } className="mt-[20px] h-5 w-5" alt="Toggle visibility" />
             </div>
           </div>
           <button type="submit" className="flex items-center justify-center mx-auto w-3/4 py-2 mt-4 text-white bg-blue-500 rounded-[43px] max-h-10 hover:bg-blue-600 font-bold text-2xl text-center" style={{ height: "30%" }}>Sign Up</button>
